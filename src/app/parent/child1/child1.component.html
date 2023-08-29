@@ -1,0 +1,13 @@
+<ng-container [formGroup]="form">
+    <div>
+        <h5>First Name</h5>
+        <div class="p-field">
+            <input id="firstName" type="text" aria-describedby="firstName-help" formControlName="firstName" pInputText />
+            <div *ngIf="form.controls['firstName'].invalid && (form.controls['firstName'].dirty || form.controls['firstName'].touched)">
+                <div *ngIf="form.controls['firstName'].errors && form.controls['firstName'].errors.required">
+                    <small id="firstName-help" class="p-error">First Name is required.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

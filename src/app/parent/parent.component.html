@@ -1,0 +1,13 @@
+<div class="flex">
+    <form [formGroup]="parentForm" (ngSubmit)="onSubmit()">
+        <div>
+            <app-child1 ></app-child1>
+        </div>
+        <div>
+            <app-child2></app-child2>
+        </div>
+        <p>
+            <button class="p-button" type="submit" [disabled]="!parentForm.valid">Submit</button>
+        </p>
+    </form>
+</div>

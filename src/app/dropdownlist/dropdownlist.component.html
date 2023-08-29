@@ -1,0 +1,40 @@
+<div>
+    <h1>DEMO</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        <h5>City</h5>
+        <p-dropdown formControlName="city" [options]="cities" placeholder="Select a City" optionLabel="name" [showClear]="true"></p-dropdown>
+        <div *ngIf="form.controls['city'].invalid && (form.controls['city'].dirty || form.controls['city'].touched)" class="p-tag-warning">
+          <div *ngIf="form.controls['city'].errors && form.controls['city'].errors.required">
+            Please select City
+          </div>
+        </div>
+      </div>
+      <div>
+        <h5>province</h5>
+        <p-dropdown formControlName="province" [options]="provinces" placeholder="Select a province" optionLabel="name" [showClear]="true"></p-dropdown>
+        <div *ngIf="form.controls['province'].invalid && (form.controls['province'].dirty || form.controls['province'].touched)" class="p-tag-warning">
+          <div *ngIf="form.controls['province'].errors && form.controls['province'].errors.required">
+            Please select Province
+          </div>
+        </div>
+      </div>
+      <div>
+        <h5>Commune</h5>
+        <p-dropdown formControlName="commune" [options]="communes"  placeholder="Select a Commnue" optionLabel="name" [showClear]="true"></p-dropdown>
+        <div *ngIf="form.controls['commune'].invalid && (form.controls['commune'].dirty || form.controls['commune'].touched)" class="p-tag-warning">
+          <div *ngIf="form.controls['commune'].errors && form.controls['commune'].errors.required">
+            Please select Commune
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>
+          <button class="p-button" type="submit" [disabled]="!form.valid">Submit</button>
+          <button class="p-button" type="button" (click)="getDetail()">Get detail</button>
+        </p>
+        <p>
+        </p>
+      </div>
+    </form>
+</div>
