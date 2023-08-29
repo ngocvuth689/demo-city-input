@@ -57,6 +57,8 @@ export class AppComponent {
           console.log('x',city);
           if (city !== null && city !== '') {
             this.getDatas(city.code)
+          } else {
+            this.resetCity();
           }
           return of(city);
         })
@@ -71,6 +73,9 @@ export class AppComponent {
           console.log('x',province);
           if (province !== null && province !== '') {
             this.getDatas(province.code)
+          } else {
+            this.selectedCommuneCode = '';
+            this.communes = [];
           }
           return of(province);
         })
